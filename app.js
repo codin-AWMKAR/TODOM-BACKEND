@@ -7,10 +7,10 @@ const list = require("./routes/list");
 const path = require("path");
 const port = 1000 || process.env.PORT
 
-app.get("/", (req, res) => {
-    app.use(express.static(path.resolve(__dirname, "Frontend", "build")));
-    res.sendFile(path.resolve(__dirname, "Frontend", "build", "index.html"));
-  });
+// app.get("/", (req, res) => {
+//     app.use(express.static(path.resolve(__dirname, "Frontend", "build")));
+//     res.sendFile(path.resolve(__dirname, "Frontend", "build", "index.html"));
+//   });
 app.use(express.json());
 app.use(cors())
 app.get("/",(req,res)=>{
