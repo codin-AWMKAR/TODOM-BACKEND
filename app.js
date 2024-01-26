@@ -5,6 +5,7 @@ require("./conn/conn");
 const auth = require("./routes/auth");
 const list = require("./routes/list");
 const path = require("path");
+const port = 1000 || process.env.PORT
 
 app.get("/", (req, res) => {
     app.use(express.static(path.resolve(__dirname, "Frontend", "build")));
@@ -19,6 +20,6 @@ app.get("/",(req,res)=>{
 
 app.use("/api/v1",auth);
 app.use("/api/v2",list);
-app.listen(1000, ()=>{
+app.listen(port, ()=>{
     console.log("Server Started");
 })
