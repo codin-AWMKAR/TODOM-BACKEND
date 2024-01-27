@@ -7,17 +7,12 @@ const list = require("./routes/list");
 const path = require("path");
 const port = 1000 || process.env.PORT
 
-app.use(express.static(path.resolve(__dirname, "../Frontend", "build")));
 
-// Route for the root URL ("/") to serve the index.html file
-app.get("/", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "../Frontend", "build", "index.html"));
-});
 app.use(express.json());
 app.use(cors())
-// app.get("/",(req,res)=>{
-//     res.send("Hello");
-// });
+app.get("/",(req,res)=>{
+    res.send("Hello");
+});
 
 
 app.use("/api/v1",auth);
